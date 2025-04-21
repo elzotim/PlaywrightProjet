@@ -1,0 +1,32 @@
+{
+  "name": "playwrightprojet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+   "ExecRec" : "cross-env ENV_NAME=rec npx playwright test "  ,
+    "ExecDev" : "cross-env ENV_NAME=dev npx playwright test " ,
+    "Execpp" : "cross-env ENV_NAME=pp npx playwright test " ,
+    "ExecRecchrome" : "cross-env ENV_NAME=rec npx playwright test --project=chromium --headed "  ,
+    "ExecDevchrome" : "cross-env ENV_NAME=dev npx playwright test --project=chromium --headed  " ,
+    "Execppchrome" : "cross-env ENV_NAME=pp npx playwright test --project=chromium --headed " ,
+  
+
+    "ExecRecFirefox" : "cross-env ENV_NAME=rec npx playwright test --project=firefox --headed "  ,
+    "ExecDevFirefox" : "cross-env ENV_NAME=dev npx playwright test --project=firefox --headed  " ,
+    "ExecppFirefox" : "cross-env ENV_NAME=pp npx playwright test --project=firefox --headed " 
+  
+  },
+
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.14.1"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.5.0"
+  }
+}
