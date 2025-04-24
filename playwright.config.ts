@@ -16,7 +16,10 @@ dotenv.config({
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './tests',
+  testDir: './tests/ObjetPages',
+  //chemin pour crypter MOt de pass et pour executer sur git bash 
+  // SECRET_KEY=hafsa npm run ExecRecchromeui
+  //testDir: './utils',
   /* Run tests in files in parallel */
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */

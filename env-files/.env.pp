@@ -1,3 +1,3 @@
-BASE_URL = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login/pp"
-USER_NAME = "Adminpp",
-PASSWORD = "admin123pp"
+BASE_URL = https://opensource-demo.orangehrmlive.com/web/auth/login
+USER_NAME =Admin
+PASSWORD =admin123
