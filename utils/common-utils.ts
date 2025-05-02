@@ -11,13 +11,14 @@ export default class CommonUtils {
    */
   constructor() {
     if (process.env.SECRET_KEY) {
-      // Stocke la clé secrète dans l'instance
-      this.secretKey = process.env.SECRET_KEY; //SECRET_KEY=hafsa npm run ExecRecchrome
+      this.secretKey = process.env.SECRET_KEY;
+    } else if (process.env.NODE_ENV === 'test') {
+      this.secretKey = 'fake-test-secret';
     } else {
-      // Arrête le programme si la clé n'est pas définie
-      throw new Error("Veuillez fournir la clé secrète au début de l’exécution.");
+      throw new Error("SECRET_KEY manquante");
     }
   }
+  
 
   /**
    * Chiffre une donnée (string) avec AES
