@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "auth": "cross-env ENV_NAME=rec npx playwright test --ui .LesVGlobal.spec.ts",
+    "auth2": "cross-env ENV_NAME=rec npx playwright test --project=chromium --headed  .LesVGlobal.spec.ts",
     "ExecRec": "cross-env ENV_NAME=rec npx playwright test ",
     "ExecDev": "cross-env ENV_NAME=dev npx playwright test ",
     "Execpp": "cross-env ENV_NAME=pp npx playwright test ",
@@ -16,8 +18,8 @@
     "ExecRecui": "cross-env ENV_NAME=rec npx playwright test --ui",
     "ExecDevui": "cross-env ENV_NAME=dev npx playwright test --ui ",
     "Execppui": "cross-env ENV_NAME=pp npx playwright test --ui",
-    "ExecRecchromeui": "cross-env ENV_NAME=rec npx playwright test --project=chromium --ui",
-    "ExecDevchromeui": "cross-env ENV_NAME=dev npx playwright test --project=chromium --ui  ",
+    "ExecRecchromeui": "cross-env ENV_NAME=rec npx playwright test --project=chromium --ui --debug",
+    "ExecDevchromeui": "cross-env ENV_NAME=dev npx playwright test --project=chromium --ui  --debug",
     "Execppchromeui": "cross-env ENV_NAME=pp npx playwright test --project=chromium --ui ",
     "ExecRecFirefoxui": "cross-env ENV_NAME=rec npx playwright test --project=firefox --ui ",
     "ExecDevFirefoxui": "cross-env ENV_NAME=dev npx playwright test --project=firefox --ui  ",
@@ -31,6 +33,7 @@
     "@types/node": "^22.14.1"
   },
   "dependencies": {
+    "@faker-js/faker": "^9.7.0",
     "cross-env": "^7.0.3",
     "crypto-js": "^4.2.0",
     "dotenv": "^16.5.0"

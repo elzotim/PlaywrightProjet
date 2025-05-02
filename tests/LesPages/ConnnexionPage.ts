@@ -6,14 +6,14 @@ export class Connection {
     readonly UserNameSaisi: Locator;      // Champ pour le nom d'utilisateur
     readonly PassWordSaisi: Locator;      // Champ pour le mot de passe
     readonly BoutonConnecte: Locator;     // Bouton de connexion
-    readonly ConfirmeConnection : Locator //confirmation de la connection 
+    readonly ConfirmationConnection : Locator //confirmation de la connection 
     constructor(page: Page) {
         this.page = page;
         // Sélection des éléments par leur rôle et nom accessible
         this.UserNameSaisi = page.getByRole('textbox', { name: 'Username' });
         this.PassWordSaisi = page.getByRole('textbox', { name: 'Password' });
         this.BoutonConnecte = page.getByRole('button', { name: 'Login' });
-        this.ConfirmeConnection = page.locator('div').filter({ hasText: /^Dashboard$/ })
+        this.ConfirmationConnection = page.getByRole('heading', { name: 'Dashboard' });
     }
     // Méthode pour naviguer vers une URL spécifique
     /**@param url  */
@@ -22,17 +22,19 @@ export class Connection {
     }
     // Méthode pour se connecter avec un nom d'utilisateur et un mot de passe
     /**
-     * @param MdpValeur
+     * //@param MdpValeur
      * @param UserNameValeur 
-     *   */
+     */  
     async Connexion(UserNameValeur: string, MdpValeur: string) {
+        await this.UserNameSaisi.waitFor({ state: 'visible' })
         await this.UserNameSaisi.fill(UserNameValeur);   // Remplir le champ "Username"
         await this.PassWordSaisi.fill(MdpValeur);        // Remplir le champ "Password"
         await this.BoutonConnecte.click();               // Cliquer sur "Login"
     }
 
-    async ConfirmaConnection(textContent: string){
-        await this.ConfirmeConnection.click();
+    async ConfirmaConnection(){
+     this.ConfirmationConnection;
+        //await expect(this.ConfirmationConnection).toHaveText("Dashboard");
     }
 }
 
