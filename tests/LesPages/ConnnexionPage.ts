@@ -7,6 +7,8 @@ export class Connection {
     readonly PassWordSaisi: Locator;      // Champ pour le mot de passe
     readonly BoutonConnecte: Locator;     // Bouton de connexion
     readonly ConfirmationConnection : Locator //confirmation de la connection 
+    readonly invalidCredentialsErrorPopup: Locator; // Erreur de connexion invalide
+    readonly LoginText  : Locator; // Login pour se connecter
     constructor(page: Page) {
         this.page = page;
         // Sélection des éléments par leur rôle et nom accessible
@@ -14,6 +16,8 @@ export class Connection {
         this.PassWordSaisi = page.getByRole('textbox', { name: 'Password' });
         this.BoutonConnecte = page.getByRole('button', { name: 'Login' });
         this.ConfirmationConnection = page.getByRole('heading', { name: 'Dashboard' });
+        this.invalidCredentialsErrorPopup = page.getByText('Invalid credentials'); // Erreur de connexion invalide
+        this.LoginText = page.getByRole('heading', { name: 'Login' }); // Login pour se connecter
     }
     // Méthode pour naviguer vers une URL spécifique
     /**@param url  */
@@ -36,5 +40,11 @@ export class Connection {
      this.ConfirmationConnection;
         //await expect(this.ConfirmationConnection).toHaveText("Dashboard");
     }
+
+async invalidConnection(){
+    this.invalidCredentialsErrorPopup;
+    this.LoginText;
+       //await expect(this.ConfirmationConnection).toHaveText("Dashboard");
+   }
 }
 

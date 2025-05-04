@@ -19,9 +19,9 @@ test.beforeEach("Avant tout bloc ", async ({ connection, commonUtils }) => {
   // Navigation vers l'URL de connexion
   await connection.UrlOrangeHrm(url);
   //   // Connexion avec le nom d'utilisateur et le mot de passe déchiffré
- const mdp = process.env.PASSWORD ;
+ const mdp = process.env.PASSWORD! ;
   await connection.Connexion(
-    process.env.USER_NAME,
+    process.env.USER_NAME!,
     commonUtils.decryptData(mdp)
   );
 });
