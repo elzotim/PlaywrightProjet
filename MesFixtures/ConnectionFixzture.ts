@@ -3,6 +3,7 @@ import { Connection } from '../tests/LesPages/ConnnexionPage';
 import { TableauBordPage } from '../tests/LesPages/TableauBordPage';
 import { Recrutement } from '../tests/LesPages/Recrutement';
 import { Deconnection } from '../tests/LesPages/DeconnectionPage';
+import { BuzzPage } from '../tests/LesPages/BuzzPage';
 
 
 
@@ -11,7 +12,8 @@ type MesFixture =
     connection : Connection ;
     tableauBordPage: TableauBordPage;
     recrutementPage: Recrutement ;
-    deconnection : Deconnection
+    deconnection : Deconnection; 
+    buzzPage : BuzzPage;
 
 }
 ////////////////connection 
@@ -34,6 +36,9 @@ recrutementPage : async({page}, use)=>{
 deconnection : async({page}, use)=>{
   const recrutementPage= new Deconnection (page) 
   await use(recrutementPage)
-  }}
-)
-
+  },
+  buzzPage : async({page}, use)=>{
+    const buzzPage= new BuzzPage (page) 
+    await use(buzzPage)
+  }
+})

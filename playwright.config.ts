@@ -16,7 +16,7 @@ dotenv.config({
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './tests/ObjetPages/', // Répertoire contenant les tests
+  testDir: './tests/ObjetPages', // Répertoire contenant les tests
   
   //chemin pour crypter MOt de pass et pour executer sur git bash 
   // SECRET_KEY=hafsa npm run ExecRecchromeui
