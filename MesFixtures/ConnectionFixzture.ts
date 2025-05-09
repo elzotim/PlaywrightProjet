@@ -5,6 +5,7 @@ import { Recrutement } from '../tests/LesPages/Recrutement';
 import { Deconnection } from '../tests/LesPages/DeconnectionPage';
 import { BuzzPage } from '../tests/LesPages/BuzzPage';
 import { UserDuSysteme } from '../tests/LesPages/UserDuSystem';
+import { Pim } from '../tests/LesPages/PimPage';
 
 
 
@@ -16,6 +17,7 @@ type MesFixture =
     deconnection : Deconnection; 
     buzzPage : BuzzPage;
     userDuSysteme :UserDuSysteme;
+    pim:Pim;
 
 }
 ////////////////connection 
@@ -46,5 +48,11 @@ deconnection : async({page}, use)=>{
   userDuSysteme : async({page}, use)=>{
     const userDuSysteme= new UserDuSysteme (page) 
     await use(userDuSysteme)
+  },
+
+pim : async({page}, use)=>{
+  const pim= new Pim (page) 
+  await use(pim)
   }
+
 })
