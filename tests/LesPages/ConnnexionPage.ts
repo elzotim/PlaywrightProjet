@@ -1,21 +1,29 @@
-import { Locator, Page } from "@playwright/test";
-
+import { Locator, Page ,expect} from "@playwright/test";
 // Classe représentant la page de connexion
 export class Connection {
     readonly page: Page;
     readonly UserNameSaisi: Locator;      // Champ pour le nom d'utilisateur
     readonly PassWordSaisi: Locator;      // Champ pour le mot de passe
     readonly BoutonConnecte: Locator;     // Bouton de connexion
-    readonly ConfirmationConnection : Locator //confirmation de la connection 
+    readonly ConfirmationConnectiondash : Locator //confirmation de la connection 
+    readonly LogoConfirmation: Locator;         // Logo de confirmation
+    readonly MenugeneralConfirmation: Locator; 
     readonly invalidCredentialsErrorPopup: Locator; // Erreur de connexion invalide
     readonly LoginText  : Locator; // Login pour se connecter
     constructor(page: Page) {
         this.page = page;
         // Sélection des éléments par leur rôle et nom accessible
-        this.UserNameSaisi = page.getByRole('textbox', { name: 'Username' });
+        /*this.UserNameSaisi = page.getByRole('textbox', { name: 'Username' });
         this.PassWordSaisi = page.getByRole('textbox', { name: 'Password' });
-        this.BoutonConnecte = page.getByRole('button', { name: 'Login' });
-        this.ConfirmationConnection = page.getByRole('heading', { name: 'Dashboard' });
+        this.BoutonConnecte = page.getByRole('button', { name: 'Login' });*/
+        this.UserNameSaisi = page.locator("[name='username']")
+        this.PassWordSaisi = page.locator("[name='password']")
+        this.BoutonConnecte = page.locator('button[type="submit"]');
+
+
+        this.LogoConfirmation = page.getByRole('link', { name: 'client brand banner' }); // Logo de confirmation
+        this.MenugeneralConfirmation = page.locator('.oxd-main-menu').nth(0); // Menu général de confirmation
+        this.ConfirmationConnectiondash = page.getByRole('heading', { name: 'Dashboard' });
         this.invalidCredentialsErrorPopup = page.getByText('Invalid credentials'); // Erreur de connexion invalide
         this.LoginText = page.getByRole('heading', { name: 'Login' }); // Login pour se connecter
     }
@@ -37,8 +45,13 @@ export class Connection {
     }
 
     async ConfirmaConnection(){
-     this.ConfirmationConnection;
-        //await expect(this.ConfirmationConnection).toHaveText("Dashboard");
+        //this.ConfirmationConnection;
+        //this.LogoConfirmation;
+        //this.MenugeneralConfirmation;
+    await this.ConfirmationConnectiondash.waitFor({ state: 'visible' });
+   await expect(this.ConfirmationConnectiondash).toHaveText("Dashboard");
+    await expect(this.LogoConfirmation).toBeVisible();
+    await expect(this.MenugeneralConfirmation).toBeVisible();
     }
 
 async invalidConnection(){
