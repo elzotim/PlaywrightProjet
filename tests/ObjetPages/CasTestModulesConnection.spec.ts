@@ -1,6 +1,6 @@
 import { test } from "../../MesFixtures/CrypteDecripte";
 import { expect } from "@playwright/test";
-import loginModuleData from "../../Data/data.json";
+import loginModuleData from  "../../Data/LoginModuleData.json";
 test(
   "[Login] Verify that the user cannot log in with an invalid password.",
   {

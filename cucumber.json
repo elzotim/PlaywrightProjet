@@ -1,0 +1,18 @@
+{
+  "default": {
+    "require": [
+      "tests/Features/**/*.ts"
+    ],
+    "requireModule": [
+      "ts-node/register"
+    ],
+    "paths": [
+      "tests/Features/**/*.feature"
+    ],
+    "format": [
+      "progress",
+      "html:reports/cucumber-report.html"
+    ],
+    "parallel": 1
+  }
+}

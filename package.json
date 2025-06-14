@@ -29,9 +29,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@cucumber/cucumber": "^11.3.0",
     "@playwright/test": "^1.52.0",
     "@types/node": "^22.14.1",
-    "@zerostep/playwright": "^0.1.5"
+    "@zerostep/playwright": "^0.1.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   },
   "dependencies": {
     "@faker-js/faker": "^9.7.0",
