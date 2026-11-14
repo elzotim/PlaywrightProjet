@@ -23,14 +23,16 @@
     "Execppchromeui": "cross-env ENV_NAME=pp npx playwright test --project=chromium --ui ",
     "ExecRecFirefoxui": "cross-env ENV_NAME=rec npx playwright test --project=firefox --ui ",
     "ExecDevFirefoxui": "cross-env ENV_NAME=dev npx playwright test --project=firefox --ui  ",
-    "ExecppFirefoxui": "cross-env ENV_NAME=pp npx playwright test --project=firefox --ui"
+    "ExecppFirefoxui": "cross-env ENV_NAME=pp npx playwright test --project=firefox --ui",
+    "Test_API_rec": "cross-env ENV_NAME=rec npx playwright test --project=API_TEST"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@cucumber/cucumber": "^11.3.0",
-    "@playwright/test": "^1.52.0",
+    "@playwright/test": "^1.56.1",
+    "@types/crypto-js": "^4.2.2",
     "@types/node": "^22.14.1",
     "@zerostep/playwright": "^0.1.5",
     "ts-node": "^10.9.2",

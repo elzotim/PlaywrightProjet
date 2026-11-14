@@ -35,6 +35,10 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
+    baseURL: process.env.API_URL,
+    extraHTTPHeaders: {
+      Headers: 'application/json'
+    },
    // baseURL: process.env.BASE_URL, // URL de base pour vos tests
    // storageState: './Playwright/.auth/auth.json', // Charger l'état de la session sauvegardée
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
@@ -101,6 +105,11 @@ export default defineConfig({
      //dependencies : ['auth'],
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
+
+    ////teste API
+    {
+     name: 'API_Test',
+     testDir : './tests/APi_Test'}
   ],
 
   /* Run your local dev server before starting the tests */

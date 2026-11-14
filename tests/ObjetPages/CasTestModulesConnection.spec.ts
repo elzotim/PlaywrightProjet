@@ -1,6 +1,7 @@
 import { test } from "../../MesFixtures/CrypteDecripte";
 import { expect } from "@playwright/test";
-import loginModuleData from  "../../Data/LoginModuleData.json";
+import loginModuleData from  "../../Data/data.json";
+////// 
 test(
   "[Login] Verify that the user cannot log in with an invalid password.",
   {
@@ -23,11 +24,12 @@ test(
       await connection.Connexion(
         process.env.USER_NAME!,
         loginModuleData.wrong_password
+       
       );
     });
     await test.step("Etape 3 :verification du message d'erreur", async () => {
       await expect(connection.invalidCredentialsErrorPopup).toHaveText(
-        loginModuleData.invalid_credentials_text
+        loginModuleData.invalid_credentials_text; 
       );
     });
   }

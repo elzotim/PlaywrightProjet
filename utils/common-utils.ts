@@ -21,6 +21,7 @@ export default class CommonUtils {
   
 
   /**
+   * 
    * Chiffre une donnée (string) avec AES
    * @param data - Le texte à chiffrer
    * @returns Le texte chiffré au format string

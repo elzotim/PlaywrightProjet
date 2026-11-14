@@ -20,6 +20,7 @@ async function globalSetup() {
     await page.fill('input[name="username"]', username);
     await page.fill('input[name="password"]', password);
     await page.click('button[type="submit"]');
+    
     // Ensure 'connection' is defined or imported
         // Example: import { connection } from './path/to/connection';
         // await connection.Connexion(process.env.USER_NAME as string, commonUtils.decryptData(mdp));

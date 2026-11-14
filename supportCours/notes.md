@@ -5,3 +5,5 @@ Cette commande lance Playwright en mode de génération de code et enregistre la
 Chargement du stockage d'authentification et génération du code :
 # npx playwright codegen --load-storage=auth.json https://opensource-demo.orangehrmlive.com/
 Cette commande réutilise l'authentification enregistrée ( auth.json) pour démarrer une session déjà connectée et commence à générer du code pour les interactions sur le site Web spécifié : https://opensource-demo.orangehrmlive.com/.
+la puce de la derniere fois n'est pas arrivé  dans git il faudrais un autre repushe une fois la connection 
+//// dans ce cas un autre commit est obligatoire 
